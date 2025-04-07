@@ -1,0 +1,99 @@
+:root {
+  --primary-color: #17A2B8;
+  --primary-color-dark: #0d846c;
+  --primary-color-light: #e9f7f7;
+  --secondary-color: #a74332;
+  --text-dark: #333333;
+  --text-light: #767268;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: 
+    url("Pictures/header.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .nav__logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--white);
+    cursor: pointer;
+    font-weight: bold;
+    background-color: white;
+    
+  }
+  .nav__logo span {
+    color: var(--secondary-color);
+  }
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .form-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .form-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-box button:hover {
+    background-color: #1b4f72;
+  }
+  
+  .form-box p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .form-box a {
+    color: #2e86de;
+    text-decoration: none;
+  }
+  .login-form a {
+    color: #4a90e2;
+    text-decoration: none;
+  }
