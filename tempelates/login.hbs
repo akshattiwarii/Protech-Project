@@ -12,22 +12,13 @@
     </div>
   </header>
   <div class="form-container">
-    <form onsubmit="redirectUser(event)">
+    <form action="/login" method="post">
       <h2>Login</h2>
-      <select id="userType" required>
-        <option value="">Select User Type</option>
-        <option value="doctor">Doctor</option>
-        <option value="patient">Patient</option>
-        <option value="admin">Admin</option>
-      </select>
-
-      <input type="email" placeholder="Email" required />
-      <input type="password" placeholder="Password" required />
+      <input type="email" placeholder="Email" name="email">
+      <input type="password" placeholder="Password" name="password">
       <button type="submit">Login</button>
-      <p>Don't have an account? <a href="register.html">Register</a></p>
+      <p>Don't have an account? <a href="signup">Register</a></p>
     </form>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
