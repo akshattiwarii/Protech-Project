@@ -10,7 +10,7 @@ body {
   background: linear-gradient(to bottom right, #0f172a, #000);
   color: white;
   background-image: 
-    url("Pictures/header.jpg");
+    url("/assests/header.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
