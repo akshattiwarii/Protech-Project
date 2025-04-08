@@ -27,7 +27,9 @@ app.get('/signup', (req, res) => {
 app.post("/signup", async (req, res) => {
   const data = {
     email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    name: req.body.name,
+    role: req.body.role
   }
 
   await collection.insertMany([data]);

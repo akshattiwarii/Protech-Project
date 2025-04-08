@@ -13,8 +13,14 @@
   <div class="form-container">
     <form class="form-box" action="/signup" method="post">
       <h2>Registration</h2>
+      <input type="text" name="name" placeholder="Name">
       <input type="email" name="email" placeholder="Email">
       <input type="password" name="password" placeholder="Password">
+      <select name="role">
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
+        <option value="admin">Admin</option>
+      </select>
       <button type="submit">Register</button>
       <p>Already have an account? <a href="login">Login here</a></p>
     </form>
