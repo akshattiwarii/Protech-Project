@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Registration</title>
   <link rel="stylesheet" href="signup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <div class="nav__logo">
@@ -13,16 +14,33 @@
   <div class="form-container">
     <form class="form-box" action="/signup" method="post">
       <h2>Registration</h2>
-      <input type="text" name="name" placeholder="Name">
-      <input type="email" name="email" placeholder="Email">
-      <input type="password" name="password" placeholder="Password">
-      <select name="role">
-        <option value="doctor">Doctor</option>
-        <option value="patient">Patient</option>
-        <option value="admin">Admin</option>
-      </select>
+
+      <div class="input-icon">
+        <i class="fas fa-user"></i>
+        <input type="text" name="name" placeholder="Name">
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-envelope"></i>
+        <input type="email" name="email" placeholder="Email">
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="password" placeholder="Password">
+      </div>
+
+      <div class="input-icon">
+        <i class="fas fa-user-tag"></i>
+        <select name="role">
+          <option value="" disabled selected>Select Role</option>
+          <option value="doctor">Doctor</option>
+          <option value="patient">Patient</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
       <button type="submit">Register</button>
-      <p>Already have an account? <a href="login">Login here</a></p>
+      <p>Already have an account? <a href="login.html">Login here</a></p>
     </form>
   </div>
 </body>
