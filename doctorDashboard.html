@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="doctorDashboard.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>MedBridge</h2>
+            <ul>
+                <li class="active"><i class="fas fa-home"></i> Dashboard</li>
+                <li><i class="fas fa-calendar-alt"></i> My Schedule</li>
+                <li><i class="fas fa-users"></i> Patients</li>
+                <li><i class="fas fa-chart-bar"></i> Reports</li>
+                <li><i class="fas fa-cog"></i> Settings</li>
+                <li><i class="fas fa-sign-out-alt"></i> Logout</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Doctor Dashboard</h1>
+                <div class="user-info">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Doctor">
+                    <span>Dr.Avinesh Kushwaha</span>
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Today's Appointments</h3>
+                    <p>8</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Patients Waiting</h3>
+                    <p id="waitingPatients">3</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed</h3>
+                    <p>2</p>
+                </div>
+            </div>
+
+            <!-- Current Patient -->
+            <div class="card current-patient">
+                <h2>Current Patient</h2>
+                <div class="patient-info">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Patient">
+                    <div>
+                        <h3>Ayushi Gupta</h3>
+                        <p>Queue #3 | 10:30 AM</p>
+                        <p class="patient-note">Follow-up for skin condition</p>
+                    </div>
+                </div>
+                <div class="patient-actions">
+                    <button class="btn btn-start" id="startConsultationBtn">
+                        <i class="fas fa-play"></i> Start Consultation
+                    </button>
+                    <button class="btn btn-complete" id="completeConsultationBtn" disabled>
+                        <i class="fas fa-check"></i> Complete
+                    </button>
+                    <button class="btn btn-note" id="addNoteBtn">
+                        <i class="fas fa-notes-medical"></i> Add Notes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Patient Queue -->
+            <div class="card">
+                <h2>Patient Queue</h2>
+                <div class="queue-controls">
+                    <button class="btn btn-refresh" id="refreshQueueBtn">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                    <button class="btn btn-emergency" id="addEmergencyBtn">
+                        <i class="fas fa-plus"></i> Add Emergency
+                    </button>
+                </div>
+                <table class="queue-table">
+                    <thead>
+                        <tr>
+                            <th>Queue #</th>
+                            <th>Patient</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="queueList">
+                        <!-- Filled by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Schedule Management -->
+            <div class="card">
+                <h2>Schedule Management</h2>
+                <div class="schedule-controls">
+                    <button class="btn btn-primary" id="setAvailabilityBtn">
+                        <i class="fas fa-calendar-plus"></i> Set Availability
+                    </button>
+                    <button class="btn btn-outline" id="viewScheduleBtn">
+                        <i class="fas fa-calendar-week"></i> View Schedule
+                    </button>
+                </div>
+                <div class="calendar" id="doctorCalendar">
+                    <!-- Calendar would be implemented here -->
+                    <p>Weekly calendar view would appear here</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Emergency Modal -->
+    <div class="modal" id="emergencyModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Add Emergency Patient</h2>
+            <form id="emergencyForm">
+                <div class="form-group">
+                    <label for="patientName">Patient Name</label>
+                    <input type="text" id="patientName" required>
+                </div>
+                <div class="form-group">
+                    <label for="emergencyReason">Reason</label>
+                    <textarea id="emergencyReason" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-emergency">
+                    <i class="fas fa-plus"></i> Add to Queue
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notes Modal -->
+    <div class="modal" id="notesModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Patient Notes</h2>
+            <form id="notesForm">
+                <div class="form-group">
+                    <label for="clinicalNotes">Clinical Notes</label>
+                    <textarea id="clinicalNotes" rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="prescription">Prescription</label>
+                    <textarea id="prescription" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-save"></i> Save Notes
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="doctor.js"></script>
+</body>
+</html>
